@@ -13,7 +13,6 @@ namespace ASEProject
     class Commands
     {
         Canvas c;
-        Var var;
 
         /// <summary>
         /// the constructor thst is parsed the canvas to be handled by the drawing methods
@@ -38,14 +37,6 @@ namespace ASEProject
                 String[] split = phrase.Split('=');
                 String variable = split[0];
                 int param = int.Parse(split[1]);
-               // if (var.varCheck(variable) == true)
-                //{
-               //     var.Getvar(variable);
-                //}
-                //else
-                //{
-                  //  var.AddVar(variable, param);
-                //}
             }
             else
             {
@@ -57,21 +48,6 @@ namespace ASEProject
                     String[] parameters = s[1].Split(',');
                     int[] intParameters = new int[parameters.Length];
 
-                    for (int i = 0; i < parameters.Length; i++)
-                    {
-                       // if (var.VarCheck(parameters[i]) == true)
-                        //{
-                         //   intParameters[i] = var.GetVar(parameters[i]);
-                           // Console.WriteLine(intParameters[i]);
-                        //}
-                        //else
-                        //{
-                          //  Console.WriteLine("Check Failed");
-                            //int tmp;
-                            //if (int.TryParse(parameters[i], out tmp))
-                              //  intParameters[i] = tmp;
-                        //}
-                    }
                     try
                     {
                         switch (command)
