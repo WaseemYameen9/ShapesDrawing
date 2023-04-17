@@ -32,6 +32,8 @@ namespace ASEProject
             this.CommandRchBox = new System.Windows.Forms.RichTextBox();
             this.CommandBox = new System.Windows.Forms.TextBox();
             this.OutputBox = new System.Windows.Forms.PictureBox();
+            this.txtRepitition = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.OutputBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -63,11 +65,29 @@ namespace ASEProject
             this.OutputBox.TabStop = false;
             this.OutputBox.Paint += new System.Windows.Forms.PaintEventHandler(this.OutputBox_Paint);
             // 
+            // txtRepitition
+            // 
+            this.txtRepitition.Location = new System.Drawing.Point(101, 929);
+            this.txtRepitition.Name = "txtRepitition";
+            this.txtRepitition.Size = new System.Drawing.Size(70, 26);
+            this.txtRepitition.TabIndex = 3;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(17, 931);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(80, 20);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Repitition:";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1924, 923);
+            this.ClientSize = new System.Drawing.Size(1924, 981);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.txtRepitition);
             this.Controls.Add(this.OutputBox);
             this.Controls.Add(this.CommandBox);
             this.Controls.Add(this.CommandRchBox);
@@ -86,6 +106,8 @@ namespace ASEProject
         private System.Windows.Forms.RichTextBox CommandRchBox;
         private System.Windows.Forms.TextBox CommandBox;
         private System.Windows.Forms.PictureBox OutputBox;
+        private System.Windows.Forms.TextBox txtRepitition;
+        private System.Windows.Forms.Label label1;
     }
 }
 

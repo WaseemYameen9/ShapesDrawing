@@ -58,16 +58,21 @@ namespace ASEProject
                 cmd.ToLower().Trim(); // formatting the commandBox
                 if (cmd.Equals("run")) // checking the command
                 {
-                    String[] cmds = CommandRchBox.Text.Split('\n');
-
-                    for(int i = 0; i< cmds.Length; i++)
+                    int num = Convert.ToInt32(txtRepitition.Text);
+                    while (num != 0)
                     {
-                        cmds[i].ToLower().Trim();
+                        String[] cmds = CommandRchBox.Text.Split('\n');
 
-                        p.Read(cmds[i]);
+                        for (int i = 0; i < cmds.Length; i++)
+                        {
+                            cmds[i].ToLower().Trim();
 
-                        CommandBox.Text = ""; // clears text box
-                        Refresh();
+                            p.Read(cmds[i]);
+
+                            CommandBox.Text = ""; // clears text box
+                            Refresh();
+                        }
+                        num = num - 1;
                     }
                 }
                 else

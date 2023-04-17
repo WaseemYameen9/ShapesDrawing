@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Canvas.cs" />
+    <Compile Include="Canvas_Testing.cs" />
     <Compile Include="Circle.cs" />
     <Compile Include="Commands.cs" />
     <Compile Include="Form1.cs">
