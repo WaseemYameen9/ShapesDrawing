@@ -14,6 +14,7 @@ namespace ASEProject
     /// </summary>
     class Canvas
     {
+        Color c;
         Graphics g;
         Pen pen;
         int xPos, yPos;
@@ -124,7 +125,9 @@ namespace ASEProject
         public void DrawTriangle(int width)
         {
             int[] paramValues = { xPos, yPos, width };
-            s = factory.getShape("triangle");
+            ShapeFacotry sf = new ShapeFacotry();
+            Shape s;
+            s = sf.getShape("triangle");
             s.set(c, paramValues);
             s.draw(g);
         }

@@ -56,7 +56,7 @@ namespace ASEProject
                 {
                     switch (command)
                     {
-                        case "rect":
+                        case "rectangle":
                             if (intParameters.Length != 2)
                             {
                                 System.Console.WriteLine("Invalid number of parameters");
@@ -68,9 +68,17 @@ namespace ASEProject
                             }
                             break;
                         case "circle":
-                            c.DrawCircle(intParameters[0]);
+                            if (intParameters.Length != 1)
+                            {
+                                MessageBox.Show("invalid Parameters", "Invalid Parameters", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                            else
+                            {
+                                c.DrawCircle(intParameters[0]);
+                            }
+                            
                             break;
-                        case "tri":
+                        case "triangle":
                             c.DrawTriangle(intParameters[0]);
                             break;
                         case "moveto":
@@ -86,7 +94,7 @@ namespace ASEProject
 
                             break;
                         case "colour":
-                            c.SetColour(sParams[0]);
+                            c.Colour(sParams[0]);
                             break;
                         case "fill":
                             c.Fill(sParams[0]);

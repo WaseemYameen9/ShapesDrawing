@@ -13,7 +13,7 @@ namespace ASEProject
     class Commands
     {
         Canvas c;
-        Var var = new Var();
+        Var var;
 
         /// <summary>
         /// the constructor thst is parsed the canvas to be handled by the drawing methods
@@ -38,14 +38,14 @@ namespace ASEProject
                 String[] split = phrase.Split('=');
                 String variable = split[0];
                 int param = int.Parse(split[1]);
-                if (var.varCheck(variable) == true)
-                {
-                    var.Getvar(variable);
-                }
-                else
-                {
-                    var.AddVar(variable, param);
-                }
+               // if (var.varCheck(variable) == true)
+                //{
+               //     var.Getvar(variable);
+                //}
+                //else
+                //{
+                  //  var.AddVar(variable, param);
+                //}
             }
             else
             {
@@ -59,18 +59,18 @@ namespace ASEProject
 
                     for (int i = 0; i < parameters.Length; i++)
                     {
-                        if (var.VarCheck(parameters[i]) == true)
-                        {
-                            intParameters[i] = var.GetVar(parameters[i]);
-                            Console.WriteLine(intParameters[i]);
-                        }
-                        else
-                        {
-                            Console.WriteLine("Check Failed");
-                            int tmp;
-                            if (int.TryParse(parameters[i], out tmp))
-                                intParameters[i] = tmp;
-                        }
+                       // if (var.VarCheck(parameters[i]) == true)
+                        //{
+                         //   intParameters[i] = var.GetVar(parameters[i]);
+                           // Console.WriteLine(intParameters[i]);
+                        //}
+                        //else
+                        //{
+                          //  Console.WriteLine("Check Failed");
+                            //int tmp;
+                            //if (int.TryParse(parameters[i], out tmp))
+                              //  intParameters[i] = tmp;
+                        //}
                     }
                     try
                     {
@@ -93,10 +93,10 @@ namespace ASEProject
                                 c.MoveTo(intParameters[0], intParameters[1]);
                                 break;
                             case ("colour"):
-                                c.Colour(Parameters[0]);
+                                c.Colour(intParameters[0].ToString());
                                 break;
                             case ("fill"):
-                                c.Fill(Parameters[0]);
+                                c.Fill(intParameters[0].ToString());
                                 break;
                             default:
                                 throw new InvalidOperationException("unknown command");
