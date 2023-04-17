@@ -59,21 +59,19 @@ namespace ASEProject
                 if (cmd.Equals("run")) // checking the command
                 {
                     int num = Convert.ToInt32(txtRepitition.Text);
-                    while (num != 0)
-                    {
+                   
                         String[] cmds = CommandRchBox.Text.Split('\n');
 
                         for (int i = 0; i < cmds.Length; i++)
                         {
                             cmds[i].ToLower().Trim();
 
-                            p.Read(cmds[i]);
+                            p.Read(cmds[i],num);
 
                             CommandBox.Text = ""; // clears text box
                             Refresh();
                         }
-                        num = num - 1;
-                    }
+                       
                 }
                 else
                 {
@@ -114,7 +112,7 @@ namespace ASEProject
                         }
                         else
                         {
-                            p.Read(cmd);
+                            p.Read(cmd,0);
                             CommandBox.Text = ""; // clears text box
                             Refresh(); // updates the display to show the graphics
                         }

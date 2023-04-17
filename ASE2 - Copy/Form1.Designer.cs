@@ -33,13 +33,12 @@ namespace ASEProject
             this.CommandBox = new System.Windows.Forms.TextBox();
             this.OutputBox = new System.Windows.Forms.PictureBox();
             this.txtRepitition = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.OutputBox)).BeginInit();
             this.SuspendLayout();
             // 
             // CommandRchBox
             // 
-            this.CommandRchBox.Location = new System.Drawing.Point(20, 20);
+            this.CommandRchBox.Location = new System.Drawing.Point(20, 61);
             this.CommandRchBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.CommandRchBox.Name = "CommandRchBox";
             this.CommandRchBox.Size = new System.Drawing.Size(942, 847);
@@ -48,7 +47,7 @@ namespace ASEProject
             // 
             // CommandBox
             // 
-            this.CommandBox.Location = new System.Drawing.Point(21, 883);
+            this.CommandBox.Location = new System.Drawing.Point(20, 918);
             this.CommandBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.CommandBox.Name = "CommandBox";
             this.CommandBox.Size = new System.Drawing.Size(938, 26);
@@ -67,26 +66,16 @@ namespace ASEProject
             // 
             // txtRepitition
             // 
-            this.txtRepitition.Location = new System.Drawing.Point(101, 929);
+            this.txtRepitition.Location = new System.Drawing.Point(902, 27);
             this.txtRepitition.Name = "txtRepitition";
             this.txtRepitition.Size = new System.Drawing.Size(70, 26);
-            this.txtRepitition.TabIndex = 3;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(17, 931);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(80, 20);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Repitition:";
+            this.txtRepitition.TabIndex = 5;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1924, 981);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(1924, 1050);
             this.Controls.Add(this.txtRepitition);
             this.Controls.Add(this.OutputBox);
             this.Controls.Add(this.CommandBox);
@@ -107,7 +96,6 @@ namespace ASEProject
         private System.Windows.Forms.TextBox CommandBox;
         private System.Windows.Forms.PictureBox OutputBox;
         private System.Windows.Forms.TextBox txtRepitition;
-        private System.Windows.Forms.Label label1;
     }
 }
 

@@ -30,7 +30,7 @@ namespace ASEProject
         /// </summary>
         /// <param name="phrase"></param>
         /// <exception cref="InvalidOperationException">Exception is thrown with the switch statement if the value falls through</exception>
-        public void Read(string phrase)
+        public void Read(string phrase, int num)
         {
             // phrase formatting and tidying
             phrase = phrase.Trim().ToLower();
@@ -54,65 +54,69 @@ namespace ASEProject
                 // checking there are mulitple parts to the command 
                 try
                 {
-                    switch (command)
+                    while (num != 0)
                     {
-                        case "rectangle":
-                            if (intParameters.Length != 2)
-                            {
-                                System.Console.WriteLine("Invalid number of parameters");
-                                MessageBox.Show("invalid Parameters", "Invalid Parameters", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            }
-                            else
-                            {
-                                c.DrawSquare(intParameters[0], intParameters[1]);
-                            }
-                            break;
-                        case "circle":
-                            if (intParameters.Length != 1)
-                            {
-                                MessageBox.Show("invalid Parameters", "Invalid Parameters", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            }
-                            else
-                            {
-                                c.DrawCircle(intParameters[0]);
-                            }
-                            
-                            break;
-                        case "triangle":
-                            c.DrawTriangle(intParameters[0]);
-                            break;
-                        case "moveto":
-                            if (intParameters.Length != 2)
-                            {
-                                System.Console.WriteLine("Invalid number of parameters");
-                                MessageBox.Show("Invalid parameters", "Invalid parameters", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            }
-                            else
-                            {
-                                c.MoveTo(intParameters[0], intParameters[1]);
-                            }
+                        switch (command)
+                        {
+                            case "rectangle":
+                                if (intParameters.Length != 2)
+                                {
+                                    System.Console.WriteLine("Invalid number of parameters");
+                                    MessageBox.Show("invalid Parameters", "Invalid Parameters", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                }
+                                else
+                                {
+                                    c.DrawSquare(intParameters[0], intParameters[1]);
+                                }
+                                break;
+                            case "circle":
+                                if (intParameters.Length != 1)
+                                {
+                                    MessageBox.Show("invalid Parameters", "Invalid Parameters", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                }
+                                else
+                                {
+                                    c.DrawCircle(intParameters[0]);
+                                }
 
-                            break;
-                        case "colour":
-                            c.Colour(sParams[0]);
-                            break;
-                        case "fill":
-                            c.Fill(sParams[0]);
-                            break;
-                        case "drawto":
-                            if (intParameters.Length != 2)
-                            {
-                                System.Console.WriteLine("Invalid number of parameters");
-                                MessageBox.Show("Invalid parameters", "Invalid command", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            }
-                            else
-                            {
-                                c.DrawLine(intParameters[0], intParameters[1]);
-                            }
-                            break;
-                        default:
+                                break;
+                            case "triangle":
+                                c.DrawTriangle(intParameters[0]);
+                                break;
+                            case "moveto":
+                                if (intParameters.Length != 2)
+                                {
+                                    System.Console.WriteLine("Invalid number of parameters");
+                                    MessageBox.Show("Invalid parameters", "Invalid parameters", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                }
+                                else
+                                {
+                                    c.MoveTo(intParameters[0], intParameters[1]);
+                                }
+
+                                break;
+                            case "colour":
+                                c.Colour(sParams[0]);
+                                break;
+                            case "fill":
+                                c.Fill(sParams[0]);
+                                break;
+                            case "drawto":
+                                if (intParameters.Length != 2)
+                                {
+                                    System.Console.WriteLine("Invalid number of parameters");
+                                    MessageBox.Show("Invalid parameters", "Invalid command", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                }
+                                else
+                                {
+                                    c.DrawLine(intParameters[0]+num, intParameters[1]+num);
+                                }
+                                break;
+                            default:
                                 throw new InvalidOperationException("Unknown item");
 
+                        }
+                        num = num - 1;
                     }
                 }
                 catch (InvalidOperationException e)
